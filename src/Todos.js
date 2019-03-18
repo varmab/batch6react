@@ -12,10 +12,7 @@ class Todos extends Component{
 
     addTodo=()=>{
         this.setState({
-            todos:[
-                ...this.state.todos,
-                this.state.todo
-            ],
+            todos:this.state.todos.concat(this.state.todo),
             todo:''
         })
     }
