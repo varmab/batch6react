@@ -2,12 +2,20 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 
 class Welcome extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state={
-            clicks:0
+            clicks:0,
+            year:props.year
         }
+    }
+
+    componentWillReceiveProps(newProps){
+        console.log(newProps)
+        this.setState({
+            year:newProps.year
+        })
     }
 
     updateClicks=()=>{
@@ -18,7 +26,7 @@ class Welcome extends Component{
 
     render(){
         return (
-            <h1 onClick={this.updateClicks}>Welcome to {this.props.title} ({this.state.clicks}) - {this.props.year}</h1>
+            <h1 onClick={this.updateClicks}>Welcome to {this.props.title} ({this.state.clicks}) - {this.state.year}</h1>
         )
     }
 }
