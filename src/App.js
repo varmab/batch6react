@@ -7,6 +7,7 @@ import Counter from './Counter'
 import Todos from './Todos'
 import LibraryMovies from './LibraryMovies'
 import Users from './Users'
+import Greeting from './Greeting'
 
 import Library from './Library'
 
@@ -31,7 +32,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Welcome title={myName} year={this.state.year}/>
+          <Welcome title={myName} year={this.state.year}>
+            <h1>Hello from with in the component</h1>
+          </Welcome>
+          <Greeting name="Rama"/>
           <button onClick={this.updateYear}>Add to year</button>
         </header>
         <Library/>

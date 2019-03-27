@@ -26,7 +26,10 @@ class Welcome extends Component{
 
     render(){
         return (
-            <h1 onClick={this.updateClicks}>Welcome to {this.props.title} ({this.state.clicks}) - {this.state.year}</h1>
+            <div>
+                    <h1 onClick={this.updateClicks}>Welcome to {this.props.title} ({this.state.clicks}) - {this.state.year}</h1>
+                    {this.props.children}
+            </div>
         )
     }
 }
